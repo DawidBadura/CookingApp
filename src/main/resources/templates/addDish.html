@@ -18,35 +18,35 @@
                 </legend>
 
                 <div class="col-md-6 mb-3">
-                    <label for="name">First name</label>
+                    <label for="name">Enter Name</label>
                     <input type="text" class="form-control" id="name"
-                           th:value="${dish.name}" required="required" placeholder="Name">
+                           th:value="${dish.name}" required="required">
                     <div class="invalid-feedback">
-                        Valid first name is required.
+                        Valid name is required.
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="receipeTextarea">Textarea</label>
+                    <label for="receipeTextarea">Receipe</label>
                     <input type="text" class="form-control" id="receipeTextarea"
-                           th:value="${dish.receipe}" required="required" placeholder="Receipe">
+                           th:value="${dish.receipe}" required="required">
                     <div class="invalid-feedback">
-                        Please enter a message in the textarea.
+                        Please enter your receipe here.
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="descriptionTextarea">Textarea</label>
+                    <label for="descriptionTextarea">Description</label>
                     <input type="text" class="form-control" id="descriptionTextarea"
-                           th:value="${dish.description}" required="required" placeholder="Description">
+                           th:value="${dish.description}" required="required">
                     <div class="invalid-feedback">
-                        Please enter a message in the textarea.
+                        Please enter a short description of your receipe.
                     </div>
                 </div>
 
                 <!-- upload image -->
                 <div class="form-group">
-                    <div class="col-md-2">
+                    <div class="mb-3">
                         <label for="dishImage">Upload dish image</label>
                     </div>
                     <div class="col-md-8">
@@ -58,11 +58,11 @@
                 <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <button type="submit" class="btn btn-success">Add Book</button>
+                        <button type="submit" class="btn btn-success">Add Dish</button>
                         <a class="btn btn-danger" th:href="@{/}">Cancel</a>
                     </div>
                 </div>
-
+git
         </form>
     </div>
 </div>
