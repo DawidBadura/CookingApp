@@ -1,0 +1,91 @@
+.bg-light {
+    background: rebeccapurple !important;
+
+}
+
+/*
+ * Footer
+ */
+body > header {
+    background: blue !important;
+}
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #111;
+    text-align: center;
+    background-color: #888888;
+    border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+
+.home-headline{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:24px;
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    margin-top: -13px;
+}
+
+.home-headline span{
+    background-color: #231F20;
+    padding: 5px 22px;
+}
+
+.section-headline {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #fff;
+    margin: auto;
+    text-align: left;
+    margin-top: 90px;
+}
+
+.section-headline span {
+    background-color: #231F20;
+    padding: 5px 22px;
+}
+ .nav-tabs a {
+    padding: 10px 15px;
+}
+.container {
+width: 70%;
+min-width: 300px;
+margin-left: 15px;
+}
+/*do sekcji z przepisami*/
+.jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: #fff;
+}
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron h1 {
+    font-weight: 300;
+}
+
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
