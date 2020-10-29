@@ -1,5 +1,5 @@
 .bg-light {
-    background: rebeccapurple !important;
+    background-color: rebeccapurple !important;
 
 }
 
@@ -20,6 +20,11 @@ body > header {
     margin-bottom: 0;
 }
 
+.img-thumbnail {
+    max-width: 20rem;
+    max-height: 8rem;
+    position: center;
+}
 .home-headline{
     font-family: 'Times New Roman', Times, serif;
     font-size:24px;

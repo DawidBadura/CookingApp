@@ -43,7 +43,7 @@ public class DishController {
 			byte[] bytes = dishImage.getBytes();
 			String name = dish.getId() + ".png";
 			BufferedOutputStream stream = new BufferedOutputStream(
-					new FileOutputStream(new File("src/main/resources/static/image/dishl/" + name)));
+					new FileOutputStream(new File("src/main/resources/static/image/dish/" + name)));
 			stream.write(bytes);
 			stream.close();
 		} catch (Exception e) {

@@ -6,65 +6,28 @@
 <div th:replace="common/header :: navbar"/>
 
 
+<form action="#" th:action="@{/dish/add}" th:object="${dish}" method="post" enctype="multipart/form-data">
 
-<div class="container">
-    <div class="row">
-        <form class="was-validated" th:action="@{/dish/add}" method="post"
-              enctype="multipart/form-data">
-            <fieldset>
-                <legend class="center-block">
-                    New Dish Information<span style="font-size: small"> * is a
-							required field</span>
-                </legend>
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name"/>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 
-                <div class="col-md-6 mb-3">
-                    <label for="name">Enter Name</label>
-                    <input type="text" class="form-control" id="name"
-                           th:value="${dish.name}" required="required">
-                    <div class="invalid-feedback">
-                        Valid name is required.
-                    </div>
-                </div>
+    <label for="description">Description</label>
+    <input type="text" th:field="*{description}" id="description" placeholder="Description"/>
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
 
-                <div class="mb-3">
-                    <label for="receipeTextarea">Receipe</label>
-                    <input type="text" class="form-control" id="receipeTextarea"
-                           th:value="${dish.receipe}" required="required">
-                    <div class="invalid-feedback">
-                        Please enter your receipe here.
-                    </div>
-                </div>
+    <label for="description">Receipe</label>
+    <input type="text" th:field="*{receipe}" id="receipe" placeholder="Receipe"/>
+    <span th:if="${#fields.hasErrors('receipe')}" th:errors="*{receipe}"></span>
 
-                <div class="mb-3">
-                    <label for="descriptionTextarea">Description</label>
-                    <input type="text" class="form-control" id="descriptionTextarea"
-                           th:value="${dish.description}" required="required">
-                    <div class="invalid-feedback">
-                        Please enter a short description of your receipe.
-                    </div>
-                </div>
+    <label for="dishImage">Upload dish image</label>
+    <input id="dishImage" type="file" name="dishImage" th:value="${dish.dishImage}"/>
 
-                <!-- upload image -->
-                <div class="form-group">
-                    <div class="mb-3">
-                        <label for="dishImage">Upload dish image</label>
-                    </div>
-                    <div class="col-md-8">
-                        <input id="dishImage" type="file" name="dishImage"
-                               th:value="${dish.dishImage}"/>
-                    </div>
-                </div>
+    <button type="submit" class="btn btn-success">Add Dish</button>
+    <a class="btn btn-danger" th:href="@{/}">Cancel</a>
+</form>
 
-                <div class="form-group">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <button type="submit" class="btn btn-success">Add Dish</button>
-                        <a class="btn btn-danger" th:href="@{/}">Cancel</a>
-                    </div>
-                </div>
-git
-        </form>
-    </div>
+
 </div>
 
 
