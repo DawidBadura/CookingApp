@@ -16,6 +16,10 @@
     <input type="text" th:field="*{description}" id="description" placeholder="Description"/>
     <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
 
+    <label for="ingredients">Ingredients</label>
+    <input type="text" th:field="*{ingredients}" id="ingredients" placeholder="Ingredients"/>
+    <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
+
     <label for="description">Receipe</label>
     <input type="text" th:field="*{receipe}" id="receipe" placeholder="Receipe"/>
     <span th:if="${#fields.hasErrors('receipe')}" th:errors="*{receipe}"></span>
@@ -30,7 +34,7 @@
 
 </div>
 
-
+<footer th:replace="common/header :: footer"/>
 <div th:replace="common/header :: body-bottom-scripts"/>
 </body>
 </html>

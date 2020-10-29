@@ -24,7 +24,6 @@
 	<div class="row" style="margin-top: 60px;">
 		<div class="col-xl-10">
 
-			<!-- Nav tabs -->
 			<ul class="nav nav-tabs">
 				<li th:classappend="${classActiveNewAccount}? 'active'"><a
 						href="#tab-1" data-toggle="tab"><span style="color: red;">Create
@@ -37,10 +36,8 @@
 								Password</span></a></li>
 			</ul>
 
-			<!-- Tab panels -->
 			<div class="tab-content">
 
-				<!-- create new user pane -->
 				<div class="tab-pane fade" id="tab-1"
 					 th:classappend="${classActiveNewAccount}? 'in active'">
 					<div class="card-group">
@@ -82,7 +79,6 @@
 					</div>
 				</div>
 
-				<!-- log in -->
 				<div class="tab-pane fade" id="tab-2"
 					 th:classappend="${classActiveLogin}? 'in active'">
 					<div class="card-group">
@@ -113,7 +109,6 @@
 					</div>
 				</div>
 
-				<!-- forget password -->
 				<div class="tab-pane fade" id="tab-3"
 					 th:classappend="${classActiveForgetPassword}? 'in active'">
 					<div class="card-group">
@@ -142,8 +137,8 @@
 	</div>
 </div>
 
-<!-- end of container -->
 
+<footer th:replace="common/header :: footer"/>
 
 <div th:replace="common/header :: body-bottom-scripts" />
 </body>

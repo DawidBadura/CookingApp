@@ -24,7 +24,9 @@
                 <p class="card-text"><span th:text="${dish.description}"></span></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+
+                        <td><a id="buttonList" class="btn-primary" th:href="@{/dish/dishInfo(id=${dish.id})}">Read more</a></td>
+
                     </div>
                 </div>
                 </div>
@@ -35,6 +37,7 @@
 
 </main>
 
+<footer th:replace="common/header :: footer"/>
 
 <div th:replace="common/header :: body-bottom-scripts"/>
 

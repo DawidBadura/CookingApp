@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div th:replace="common/header :: navbar"/>
+
+<main role="main">
+
+
+    <input hidden="hidden" name="id" th:value="${dish.id}"/>
+
+    <img th:src="@{/image/dish/}+${dish.id}+'.png'" class="main_image" id="dishInfoImg"/>
+
+    <h1> <span th:text="${dish.name}"></span></h1>
+    <br /><br />
+    <h2>To make it you gona need...</h2>
+    <h3><span th:text="${dish.ingredients}"></span></h3>
+    <br /><br />
+    <h3>How to do it</h3>
+    <p class="card-text"><span th:text="${dish.receipe}"></span></p>
+
+
+
+</main>
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+
+</body>
+</html>

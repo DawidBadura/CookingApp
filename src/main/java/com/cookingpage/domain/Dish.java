@@ -14,7 +14,7 @@ public class Dish {
 	private Long id;
 	private String name;
 	private String receipe;
-	private String ingridences;
+	private String ingredients;
 
 	@Column(columnDefinition = "text")
 	private String description;
@@ -46,12 +46,12 @@ public class Dish {
 		this.receipe = receipe;
 	}
 
-	public String getIngridences() {
-		return ingridences;
+	public String getIngredients() {
+		return ingredients;
 	}
 
-	public void setIngridences(String ingridences) {
-		this.ingridences = ingridences;
+	public void setIngredients(String ingridences) {
+		this.ingredients = ingridences;
 	}
 
 	public String getDescription() {

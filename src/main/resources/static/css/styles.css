@@ -94,3 +94,7 @@ footer {
 footer p {
     margin-bottom: .25rem;
 }
+#dishInfoImg {
+    width: 600px;
+    height: 300px;
+}
