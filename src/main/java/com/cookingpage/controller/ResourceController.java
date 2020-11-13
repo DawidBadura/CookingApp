@@ -16,14 +16,14 @@ public class ResourceController {
 	@Autowired
 	private DishService dishService;
 	
-	@RequestMapping(value="/book/removeList", method=RequestMethod.POST)
+	@RequestMapping(value="/dish/removeList", method=RequestMethod.POST)
 	public String removeList(
-			@RequestBody ArrayList<String> bookIdList, Model model
+			@RequestBody ArrayList<String> dishIdList, Model model
 			){
 		
-		for (String id : bookIdList) {
-			String bookId = id.substring(8);
-			dishService.removeOne(Long.parseLong(bookId));
+		for (String id : dishIdList) {
+			String dishId = id.substring(8);
+			dishService.removeOne(Long.parseLong(dishId));
 		}
 		
 		return "delete success";
