@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -38,7 +39,12 @@ public class UserServiceImpl implements UserService{
 		final PasswordResetToken myToken = new PasswordResetToken(token, user);
 		passwordResetTokenRepository.save(myToken);
 	}
-	
+
+	@Override
+	public Optional<User> findById(Long id) {
+		return userRepository.findById(id);
+	}
+
 	@Override
 	public User findByUsername(String username) {
 		return userRepository.findByUsername(username);

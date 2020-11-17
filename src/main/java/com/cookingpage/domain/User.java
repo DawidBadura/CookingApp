@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 public class User implements UserDetails{
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id", nullable = false, updatable = false)
@@ -22,12 +22,13 @@ public class User implements UserDetails{
 	private String password;
 	private String firstName;
 	private String lastName;
-	
+
 	@Column(name="email", nullable = false, updatable = false)
 	private String email;
 	private String phone;
 	private boolean enabled=true;
-	
+
+
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnore
 	private Set<UserRole> userRoles = new HashSet<>();
@@ -74,7 +75,7 @@ public class User implements UserDetails{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
