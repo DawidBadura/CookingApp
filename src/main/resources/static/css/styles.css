@@ -1,17 +1,14 @@
-/*.back-picture {*/
-/*    position: fixed;*/
+.menu-items
+{
+    z-index: 9999;
+    position: relative;
+}
 
-/*    z-index: 1;*/
-/*    display: block;*/
-/*    background-image: url("/image/dish/backimg.png");*/
-/*    -webkit-filter: blur(2px);*/
-/*    -moz-filter: blur(2px);*/
-/*    -o-filter: blur(2px);*/
-/*    -ms-filter: blur(2px);*/
-/*    filter: blur(2px);*/
-/*    width: 400px;*/
-/*    height: 380px;*/
-/*}*/
+
+
+
+
+
 .button {
     height: 40px;
     width: 50%;
@@ -30,11 +27,14 @@
     background: -o-linear-gradient(top, #813c3c, #541515);
     background: -ms-linear-gradient(top, #813c3c, #541515);
     background: linear-gradient(top, #813c3c, #541515);
+}
 
+a:hover {
+    text-decoration: none;
+    color: #efefef !important;
 
 }
 
-/*Krok 3: Linkuj styl*/
 a.button {
     text-decoration: none;
 }
@@ -65,7 +65,7 @@ a.button {
 {
     background: rgba(0,0,0,0.3);
     position: fixed;
-    z-index: 9999;
+    z-index: 500;
     width: 400px;
     /*height: 300px;*/
     margin-left: auto;

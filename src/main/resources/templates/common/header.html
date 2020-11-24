@@ -44,25 +44,25 @@
 <header th:fragment="navbar">
 
     <div class="menu">
-        <ul>
+        <ul class="menu-items">
 
-            <li>
-                <a class="" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="menu-items">
+                <a class="menu-items" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
 
-            <li>
-                <a class="" href="/login">MyAccount</a>
+            <li class="menu-items">
+                <a class="menu-items" href="/login">MyAccount</a>
             </li>
 
-            <li>
-                <a class="" href="#" id="">Receipes</a>
+            <li class="menu-items">
+                <a class="menu-items" href="#" id="">Receipes</a>
 
                 <ol>
-                    <li>
-                        <a class="" th:href="@{/dish/add}">Add receipe</a>
+                    <li class="menu-items">
+                        <a class="menu-items" th:href="@{/dish/add}">Add receipe</a>
                     </li>
-                    <li>
-                        <a class="" th:href="@{/dish/dishList}">List of dishes</a>
+                    <li class="menu-items">
+                        <a class="menu-items" th:href="@{/dish/dishList}">List of dishes</a>
                     </li>
                 </ol>
             </li>
