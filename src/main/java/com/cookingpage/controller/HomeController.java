@@ -52,6 +52,12 @@ public class HomeController {
 		return "myAccount";
 	}
 
+	@RequestMapping("/newUser")
+	public String newUser(Model model) {
+		model.addAttribute("classActiveNewAccount", true);
+		return "newAccount";
+	}
+
 	@RequestMapping("/forgetPassword")
 	public String forgetPassword(
 			HttpServletRequest request,
@@ -104,13 +110,13 @@ public class HomeController {
 		if (userService.findByUsername(username) != null) {
 			model.addAttribute("usernameExists", true);
 			
-			return "myAccount";
+			return "newAccount";
 		}
 		
 		if (userService.findByEmail(userEmail) != null) {
 			model.addAttribute("emailExists", true);
 			
-			return "myAccount";
+			return "newAccount";
 		}
 		
 		User user = new User();
@@ -140,11 +146,11 @@ public class HomeController {
 		
 		model.addAttribute("emailSent", "true");
 		
-		return "myAccount";
+		return "newAccount";
 	}
 	
 
-	@RequestMapping("/newUser")
+	/*@RequestMapping("/newUser")
 	public String newUser(Locale locale, @RequestParam("token") String token, Model model) {
 		PasswordResetToken passToken = userService.getPasswordResetToken(token);
 
@@ -168,7 +174,7 @@ public class HomeController {
 
 		model.addAttribute("classActiveEdit", true);
 		return "myProfile";
-	}
+	}*/
 
 	@RequestMapping(value="/updateUserInfo", method=RequestMethod.POST)
 	public String updateUserInfo(

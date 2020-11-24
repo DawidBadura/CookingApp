@@ -1,21 +1,53 @@
-.back-picture {
-    position: fixed;
+/*.back-picture {*/
+/*    position: fixed;*/
 
-    z-index: 1;
-    display: block;
-    background-image: url("/image/dish/backimg.png");
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
-    width: 400px;
-    height: 380px;
+/*    z-index: 1;*/
+/*    display: block;*/
+/*    background-image: url("/image/dish/backimg.png");*/
+/*    -webkit-filter: blur(2px);*/
+/*    -moz-filter: blur(2px);*/
+/*    -o-filter: blur(2px);*/
+/*    -ms-filter: blur(2px);*/
+/*    filter: blur(2px);*/
+/*    width: 400px;*/
+/*    height: 380px;*/
+/*}*/
+.button {
+    height: 40px;
+    width: 50%;
+
+    color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 35px;
+    font-size: 10px;
+
+    border-radius: 10px;
+    background: #813c3c;
+    border: 2px solid rgb(72, 42, 42);
+    background: -webkit-linear-gradient(top, #813c3c, #541515);
+    background: -moz-linear-gradient(top, #813c3c, #541515);
+    background: -o-linear-gradient(top, #813c3c, #541515);
+    background: -ms-linear-gradient(top, #813c3c, #541515);
+    background: linear-gradient(top, #813c3c, #541515);
+
+
+}
+
+/*Krok 3: Linkuj styl*/
+a.button {
+    text-decoration: none;
+}
+.form-group>p{
+    font-size: 10px;
+    color: #95999c !important;
 }
 .login-menuu
 {
     position: center;
     background-position: center;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -31,10 +63,11 @@
 
 .my-container
 {
+    background: rgba(0,0,0,0.3);
     position: fixed;
     z-index: 9999;
     width: 400px;
-    height: 300px;
+    /*height: 300px;*/
     margin-left: auto;
     margin-right: auto;
     padding: 20px 20px;
@@ -47,7 +80,10 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+#link-button
+{
+    float: right;
+}
 body
 {
     margin: 0;
@@ -73,6 +109,11 @@ footer
     border-bottom: 1px solid #541515;
     padding: 5px 0;
     text-align: center;
+    background: -webkit-linear-gradient(top, #813c3c, #541515);
+    background: -moz-linear-gradient(top, #813c3c, #541515);
+    background: -o-linear-gradient(top, #813c3c, #541515);
+    background: -ms-linear-gradient(top, #813c3c, #541515);
+    background: linear-gradient(top, #813c3c, #541515);
 }
 
 .menu
@@ -83,6 +124,11 @@ footer
     text-align: center;
     border-top: 1px solid #541515;
     border-bottom: 1px solid #541515;
+    background: -webkit-linear-gradient(top, #813c3c, #541515);
+    background: -moz-linear-gradient(top, #813c3c, #541515);
+    background: -o-linear-gradient(top, #813c3c, #541515);
+    background: -ms-linear-gradient(top, #813c3c, #541515);
+    background: linear-gradient(top, #813c3c, #541515);
 }
 
 ul
