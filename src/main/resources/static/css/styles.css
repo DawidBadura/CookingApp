@@ -1,14 +1,126 @@
-.bg-light {
-    background-color: rebeccapurple !important;
-
+.my-container
+{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/*
- * Footer
- */
-body > header {
-    background: blue !important;
+
+.login-menu
+{
+
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4f6cc3;
+    border-top: 1px solid #1b41d4;
+    border-bottom: 1px solid #1b41d4;
 }
+
+body
+{
+    margin: 0;
+    background-color: #2F3336;
+    color: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+header
+{
+}
+main
+{
+    min-height: 600px;
+}
+
+footer
+{
+    max-height: 100px;
+}
+
+.menu
+{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #4f6cc3;
+    text-align: center;
+    border-top: 1px solid #1b41d4;
+    border-bottom: 1px solid #1b41d4;
+}
+
+ul
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    height: 35px;
+    line-height: 200%;
+    display: inline-block;
+}
+
+ul a
+{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+}
+
+ul > li
+{
+    float: left;
+    width: 150px;
+    height: 40px;
+    border-right: 1px double #1b41d4;
+}
+
+ul > li:first-child
+{
+    border-left: 1px double #1b41d4;
+}
+
+ul > li:hover
+{
+    background-color: #4f6cc3;
+}
+
+ul > li:hover > a
+{
+    color: #1b41d4;
+}
+
+ul > li > ol
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    display: none;
+}
+
+ul > li:hover > ol
+{
+    display: block;
+}
+
+ul > li > ol > li
+{
+    background-color:#4f6cc3;
+    position: relative;
+    z-index: 100;
+    border-top: 1px dashed #1b41d4;
+}
+
+ul > li > ol > li:hover
+{
+    background-color: #4f6cc3;
+}
+
+ul > li > ol > li:hover > a
+{
+    color: #041030;
+}
+
 .blog-footer {
     padding: 2.5rem 0;
     color: #111;

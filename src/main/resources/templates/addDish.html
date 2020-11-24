@@ -5,7 +5,7 @@
 <body>
 <div th:replace="common/header :: navbar"/>
 
-
+<main id="main">
 <form action="#" th:action="@{/dish/add}" th:object="${dish}" method="post" enctype="multipart/form-data">
 
     <label for="name">Name</label>
@@ -32,8 +32,7 @@
 </form>
 
 
-</div>
-
+</main>
 <footer th:replace="common/header :: footer"/>
 <div th:replace="common/header :: body-bottom-scripts"/>
 </body>
