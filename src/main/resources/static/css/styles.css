@@ -1,19 +1,51 @@
+.back-picture {
+    position: fixed;
+
+    z-index: 1;
+    display: block;
+    background-image: url("/image/dish/backimg.png");
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    width: 400px;
+    height: 380px;
+}
+.login-menuu
+{
+    position: center;
+    background-position: center;
+}
+
+
+.form-group > p
+{
+    color: black;
+}
+
+.logalert{
+    color: red;
+    font-size: 10px;
+}
+
 .my-container
 {
-    width: auto;
+    position: fixed;
+    z-index: 9999;
+    width: 400px;
+    height: 300px;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px 20px;
+    border-radius: 20px;
 }
 
 
 .login-menu
 {
-
-    text-align: center;
-    padding: 10px 0;
-    background-color: #4f6cc3;
-    border-top: 1px solid #1b41d4;
-    border-bottom: 1px solid #1b41d4;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body
@@ -25,27 +57,32 @@ body
     font-size: 17px;
 }
 
-header
-{
-}
 main
 {
-    min-height: 600px;
-}
+    background-image: url("/image/dish/cook1.png");
+    width: 100%;
+    height: 780px;
+    background-size: cover;
+    }
 
 footer
 {
-    max-height: 100px;
+    color: #231F20;
+    background-color: #813c3c;
+    border-top: 1px solid #541515;
+    border-bottom: 1px solid #541515;
+    padding: 5px 0;
+    text-align: center;
 }
 
 .menu
 {
     width: 100%;
     padding: 10px 0;
-    background-color: #4f6cc3;
+    background-color: #813c3c;
     text-align: center;
-    border-top: 1px solid #1b41d4;
-    border-bottom: 1px solid #1b41d4;
+    border-top: 1px solid #541515;
+    border-bottom: 1px solid #541515;
 }
 
 ul
@@ -71,22 +108,22 @@ ul > li
     float: left;
     width: 150px;
     height: 40px;
-    border-right: 1px double #1b41d4;
+    border-right: 1px double #541515;
 }
 
 ul > li:first-child
 {
-    border-left: 1px double #1b41d4;
+    border-left: 1px double #541515;
 }
 
 ul > li:hover
 {
-    background-color: #4f6cc3;
+    background-color: #813c3c;
 }
 
 ul > li:hover > a
 {
-    color: #1b41d4;
+    color: #541515;
 }
 
 ul > li > ol
@@ -105,31 +142,20 @@ ul > li:hover > ol
 
 ul > li > ol > li
 {
-    background-color:#4f6cc3;
+    background-color:#813c3c;
     position: relative;
     z-index: 100;
-    border-top: 1px dashed #1b41d4;
+    border-top: 1px dashed #541515;
 }
 
 ul > li > ol > li:hover
 {
-    background-color: #4f6cc3;
+    background-color: #813c3c;
 }
 
 ul > li > ol > li:hover > a
 {
-    color: #041030;
-}
-
-.blog-footer {
-    padding: 2.5rem 0;
-    color: #111;
-    text-align: center;
-    background-color: #888888;
-    border-top: .05rem solid #e5e5e5;
-}
-.blog-footer p:last-child {
-    margin-bottom: 0;
+    color: #1c0101;
 }
 
 .img-thumbnail {
@@ -138,7 +164,6 @@ ul > li > ol > li:hover > a
     position: center;
 }
 .home-headline{
-    font-family: 'Times New Roman', Times, serif;
     font-size:24px;
     color: #fff;
     margin: auto;
@@ -152,7 +177,6 @@ ul > li > ol > li:hover > a
 }
 
 .section-headline {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
     color: #fff;
     margin: auto;
@@ -198,14 +222,7 @@ margin-left: 15px;
     max-width: 40rem;
 }
 
-footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
 
-footer p {
-    margin-bottom: .25rem;
-}
 #dishInfoImg {
     width: 600px;
     height: 300px;

@@ -7,17 +7,32 @@
 <div th:replace="common/header :: navbar" />
 
 <main>
-	<h2 Login></h2>
-	<div id="container">
-		<form>
+	<div class="login-menuu">
+		<div class="back-picture">		</div>
+	<div class="my-container">
+					<h2 Login></h2>
+					<h2>Login</h2>
+					<div class="logalert" th:if="${param.error != null}">Incorrect username or password.</div>
+					<form th:action="@{/login}" method="post">
+						<div class="form-group">
+							<label for="username">* Username: </label> <input
+								required="required" type="text" class="form-control"
+								id="username" name="username" />
+							<p>Enter your username here.</p>
+						</div>
 
-			<input type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" >
+						<div class="form-group">
+							<label for="password">* Password: </label> <input
+								required="required" type="password" class="form-control"
+								id="password" name="password" />
+							<p>Enter the password that
+								accompanies your username</p>
+						</div>
 
-			<input type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" >
-
-			<input type="submit" value="Zaloguj się">
-
-		</form>
+						<button type="submit" class="">Log in</button>
+					</form>
+			</div>
+		</div>
 	</div>
 </main>
 
