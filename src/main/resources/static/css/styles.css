@@ -4,11 +4,6 @@
     position: relative;
 }
 
-
-
-
-
-
 .button {
     height: 40px;
     width: 50%;
@@ -243,6 +238,7 @@ min-width: 300px;
 margin-left: 15px;
 }
 /*do sekcji z przepisami*/
+/*
 .jumbotron {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -272,4 +268,4 @@ margin-left: 15px;
 #dishInfoImg {
     width: 600px;
     height: 300px;
-}
+}*/
