@@ -6,30 +6,53 @@
 <div th:replace="common/header :: navbar"/>
 
 <main id="main">
-<form action="#" th:action="@{/dish/add}" th:object="${dish}" method="post" enctype="multipart/form-data">
 
-    <label for="name">Name</label>
-    <input type="text" th:field="*{name}" id="name" placeholder="Name"/>
-    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 
-    <label for="description">Description</label>
-    <input type="text" th:field="*{description}" id="description" placeholder="Description"/>
-    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    <div class="login-menuu">
+        <div class="back-picture"></div>
+        <div class="my-container">
+            <h2>New Dish</h2>
+            <div class="logalert" th:if="${param.error != null}">Incorrect username or password.</div>
+            <form th:action="@{/dish/add}" th:object="${dish}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" th:field="*{name}" id="name" placeholder="Name"/>
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                    <p>Enter name of dish.</p>
+                </div>
 
-    <label for="ingredients">Ingredients</label>
-    <input type="text" th:field="*{ingredients}" id="ingredients" placeholder="Ingredients"/>
-    <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" th:field="*{description}" id="description" placeholder="Description"/>
+                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                    <p>Short describe of your dish</p>
+                </div>
 
-    <label for="description">Receipe</label>
-    <input type="text" th:field="*{receipe}" id="receipe" placeholder="Receipe"/>
-    <span th:if="${#fields.hasErrors('receipe')}" th:errors="*{receipe}"></span>
+                <div class="form-group">
+                    <label for="ingredients">Ingredients</label>
+                    <input type="text" th:field="*{ingredients}" id="ingredients" placeholder="Ingredients"/>
+                    <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
+                    <p>What we need to start making food</p>
+                </div>
 
-    <label for="dishImage">Upload dish image</label>
-    <input id="dishImage" type="file" name="dishImage" th:value="${dish.dishImage}"/>
+                <div class="form-group">
+                    <label for="receipe">Receipe</label>
+                    <input type="text" th:field="*{receipe}" id="receipe" placeholder="Receipe"/>
+                    <span th:if="${#fields.hasErrors('receipe')}" th:errors="*{receipe}"></span>
+                    <p>Share recepe</p>
+                </div>
 
-    <button type="submit" class="btn btn-success">Add Dish</button>
-    <a class="btn btn-danger" th:href="@{/}">Cancel</a>
-</form>
+                <div class="form-group">
+                    <label for="dishImage">Upload dish image</label>
+                    <input id="dishImage" type="file" name="dishImage" th:value="${dish.dishImage}"/>
+                    <p>Share dish picture</p>
+                </div>
+
+                <button type="submit" class="button">Log in</button>
+            </form>
+        </div>
+    </div>
+    </div>
 
 
 </main>
