@@ -1,9 +1,12 @@
 package com.cookingpage.domain.security;
 
 import com.cookingpage.domain.User;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-
+@Getter
+@Setter
 @Entity
 @Table(name="user_role")
 public class UserRole {
@@ -26,36 +29,4 @@ public class UserRole {
 		this.user = user;
 		this.role = role;
 	}
-
-
-	public Long getUserRoleId() {
-		return userRoleId;
-	}
-
-
-	public void setUserRoleId(Long userRoleId) {
-		this.userRoleId = userRoleId;
-	}
-
-
-	public User getUser() {
-		return user;
-	}
-
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-
-	public Role getRole() {
-		return role;
-	}
-
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-	
-	
 }

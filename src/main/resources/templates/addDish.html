@@ -52,7 +52,53 @@
             </form>
         </div>
     </div>
-    </div>
+
+
+
+    <div class="my-container">
+            <h2>New Ingredient</h2>
+            <div class="logalert" th:if="${param.error != null}">Incorrect input.</div>
+            <form th:action="@{/dish/add}" th:object="${ingredient}" method="post">
+                <div class="form-group">
+                    <label for="ingredientName">Ingredient name</label>
+                    <input type="text" th:field="*{name}" id="ingredientName" placeholder="Name"/>
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                    <p>Enter name of dish.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="calories">Description</label>
+                    <input type="text" th:field="*{calories}" id="calories" placeholder="Calories"/>
+                    <span th:if="${#fields.hasErrors('calories')}" th:errors="*{calories}"></span>
+                    <p>How many calories in 100g</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="carbohydrates">Carbohydrates</label>
+                    <input type="text" th:field="*{carbohydrates}" id="carbohydrates" placeholder="Carbohydrates"/>
+                    <span th:if="${#fields.hasErrors('carbohydrates')}" th:errors="*{carbohydrates}"></span>
+                    <p>How many carbohydrates in 100g</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="proteins">Proteins</label>
+                    <input type="text" th:field="*{proteins}" id="proteins" placeholder="Proteins"/>
+                    <span th:if="${#fields.hasErrors('proteins')}" th:errors="*{proteins}"></span>
+                    <p>How many proteins in 100g</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="fats">Fats</label>
+                    <input type="text" th:field="*{fats}" id="fats" placeholder="Fats"/>
+                    <span th:if="${#fields.hasErrors('fats')}" th:errors="*{fats}"></span>
+                    <p>How many fats in 100g</p>
+                </div>
+
+
+                <button type="submit" class="button">Log in</button>
+            </form>
+        </div>
+
 
 
 </main>
