@@ -5,6 +5,16 @@
 <body>
     <header th:replace = "common/header :: navbar" />
     <main>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+            </tr>
+            <tr th:each= "recipe : ${recipes}">
+                <td th:text="${recipe.id}">123</td>
+                <td th:text="${recipe.description}">Tasty Goodnees</td>
+            </tr>
+        </table>
     </main>
     <footer th:replace="common/header :: footer"/>
 

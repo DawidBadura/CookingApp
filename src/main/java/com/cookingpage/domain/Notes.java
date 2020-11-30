@@ -17,7 +17,7 @@ public class Notes {
     private Recipe recipe;
 
     @Lob
-    private String receipeNotes;
+    private String recipeNotes;
 
 
 }
