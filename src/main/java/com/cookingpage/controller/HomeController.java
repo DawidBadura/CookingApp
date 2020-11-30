@@ -41,10 +41,10 @@ public class HomeController {
 	@Autowired
 	private UserSecurityService userSecurityService;
 
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String index() {
 		return "index";
-	}
+	}*/
 
 	@RequestMapping("/login")
 	public String login(Model model) {
