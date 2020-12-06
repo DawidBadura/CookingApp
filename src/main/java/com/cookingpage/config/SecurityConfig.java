@@ -42,22 +42,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests().
-		/*	antMatchers("/**").*/
-			antMatchers(PUBLIC_MATCHERS).
-			permitAll().anyRequest().authenticated();
+				antMatchers("/adminPortal").hasRole("ADMIN").
+				antMatchers(PUBLIC_MATCHERS).
+				permitAll().anyRequest().authenticated().
+				and().
+				csrf().disable().cors().disable().
+				formLogin().failureUrl("/login?error").
+				loginPage("/login").permitAll().
+				and().
+				logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).
+				logoutSuccessUrl("/?logout").deleteCookies("remember-me").permitAll().
+				and().
+				rememberMe().
+				and().headers().frameOptions().disable();
 
-		http.headers().frameOptions().disable();
 
-		http
-			.csrf().disable().cors().disable()
-			.formLogin().failureUrl("/login?error")
-			/*.defaultSuccessUrl("/")*/
-			.loginPage("/login").permitAll()
-			.and()
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-			.logoutSuccessUrl("/?logout").deleteCookies("remember-me").permitAll()
-			.and()
-			.rememberMe();
 	}
 
 	@Autowired

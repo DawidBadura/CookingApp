@@ -33,7 +33,7 @@ public class CookingApplication implements CommandLineRunner {
 		Set<UserRole> userRoles = new HashSet<>();
 		Role role1= new Role();
 		role1.setRoleId(1);
-		role1.setName("ROLE_USER");
+		role1.setName("ROLE_ADMIN");
 		userRoles.add(new UserRole(user1, role1));
 
 		userService.createUser(user1, userRoles);

@@ -1,6 +1,7 @@
 package com.cookingpage.controller;
 
 
+import com.cookingpage.service.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
