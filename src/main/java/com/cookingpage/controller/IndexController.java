@@ -1,3 +1,4 @@
+/*
 package com.cookingpage.controller;
 
 
@@ -22,4 +23,4 @@ public class IndexController {
 
         return "index";
     }
-}
+}*/

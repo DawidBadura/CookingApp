@@ -2,7 +2,6 @@ package com.cookingpage.service.impl;
 
 import com.cookingpage.domain.User;
 import com.cookingpage.domain.security.PasswordResetToken;
-import com.cookingpage.domain.security.UserRole;
 import com.cookingpage.repository.PasswordResetTokenRepository;
 import com.cookingpage.repository.RoleRepository;
 import com.cookingpage.repository.UserRepository;
@@ -47,7 +46,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public User findByUsername(String username) {
-		return userRepository.findByUsername(username);
+		return userRepository.getUserByUsername(username);
 	}
 	
 	@Override
@@ -56,17 +55,17 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public User createUser(User user, Set<UserRole> userRoles){
-		User localUser = userRepository.findByUsername(user.getUsername());
+	public User createUser(User user/*, Set<UserRole> userRoles*/){
+		User localUser = userRepository.getUserByUsername(user.getUsername());
 		
 		if(localUser != null) {
 			LOG.info("user {} already exists. Nothing will be done.", user.getUsername());
 		} else {
-			for (UserRole ur : userRoles) {
+			/*for (UserRole ur : userRoles) {
 				roleRepository.save(ur.getRole());
-			}
+			}*/
 			
-			user.getUserRoles().addAll(userRoles);
+		//	user.getUserRoles().addAll(userRoles);
 			
 			localUser = userRepository.save(user);
 		}

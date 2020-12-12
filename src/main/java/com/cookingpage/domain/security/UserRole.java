@@ -1,3 +1,4 @@
+/*
 package com.cookingpage.domain.security;
 
 import com.cookingpage.domain.User;
@@ -30,3 +31,4 @@ public class UserRole {
 		this.role = role;
 	}
 }
+*/

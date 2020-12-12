@@ -1,3 +1,4 @@
+/*
 package com.cookingpage.domain.security;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -14,3 +15,4 @@ public class Authority implements GrantedAuthority{
 		return authority;
 	}
 }
+*/

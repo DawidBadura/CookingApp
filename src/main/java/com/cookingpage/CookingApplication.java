@@ -1,8 +1,8 @@
 package com.cookingpage;
 
 import com.cookingpage.domain.User;
+import com.cookingpage.domain.security.MyUserDetails;
 import com.cookingpage.domain.security.Role;
-import com.cookingpage.domain.security.UserRole;
 import com.cookingpage.service.UserService;
 import com.cookingpage.utility.SecurityUtility;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,18 +24,33 @@ public class CookingApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		//User user1 = new User("Dawid", "badura", "admin", SecurityUtility.passwordEncoder().encode("dwd"), "dawid.badurakrk@gmail.com");
+
 		User user1 = new User();
+		User user2 = new User();
+
 		user1.setFirstName("Dawid");
 		user1.setLastName("Badura");
 		user1.setUsername("admin");
-		user1.setPassword(SecurityUtility.passwordEncoder().encode("dwd"));
+		user1.setPassword(SecurityUtility.passwordEncoder().encode("admin"));
 		user1.setEmail("dawid.badurakrk@gmail.com");
-		Set<UserRole> userRoles = new HashSet<>();
-		Role role1= new Role();
-		role1.setRoleId(1);
-		role1.setName("ROLE_ADMIN");
-		userRoles.add(new UserRole(user1, role1));
 
-		userService.createUser(user1, userRoles);
+		user2.setFirstName("Dawid");
+		user2.setLastName("Badura");
+		user2.setUsername("user");
+		user2.setPassword(SecurityUtility.passwordEncoder().encode("user"));
+		user2.setEmail("dawid.badurakrk@gmail.com");
+
+		Role role1= new Role();
+		Role role2= new Role();
+
+		role1.setName("ROLE_ADMIN");
+		role2.setName("ROLE_USER");
+
+		user1.addRole(role1);
+		user2.addRole(role2);
+
+		userService.createUser(user1/*, userRoles*/);
+		userService.createUser(user2/*, userRoles*/);
 	}
 }

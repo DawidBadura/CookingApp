@@ -2,7 +2,6 @@ package com.cookingpage.service;
 
 import com.cookingpage.domain.User;
 import com.cookingpage.domain.security.PasswordResetToken;
-import com.cookingpage.domain.security.UserRole;
 
 import java.util.Optional;
 import java.util.Set;
@@ -18,7 +17,7 @@ public interface UserService {
 	
 	User findByEmail (String email);
 	
-	User createUser(User user, Set<UserRole> userRoles) throws Exception;
+	User createUser(User user/*, Set<UserRole> userRoles*/) throws Exception;
 	
 	User save(User user);
 }

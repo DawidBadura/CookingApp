@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:fragment="common-header">
     <meta charset="utf-8">
@@ -59,16 +60,14 @@
 
                 <ol>
                     <li class="menu-items">
-                        <a class="menu-items" th:href="@{/dish/add}">Add receipe</a>
+                        <a class="menu-items" th:href="@{/recipe/new}">Add receipe</a>
                     </li>
                     <li class="menu-items">
-                        <a class="menu-items" th:href="@{/dish/dishList}">List of dishes</a>
+                        <a class="menu-items" th:href="@{/recipe/recipeSet}">List of dishes</a>
                     </li>
                 </ol>
             </li>
-            <li class="menu-items">
-                <a class="menu-items" th:href="@{/adminPortal}">Home <span class="sr-only">(current)</span></a>
-            </li>
+
         </ul>
     </div>
 </header>

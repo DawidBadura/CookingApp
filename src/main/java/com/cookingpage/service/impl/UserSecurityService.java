@@ -1,6 +1,7 @@
 package com.cookingpage.service.impl;
 
 import com.cookingpage.domain.User;
+import com.cookingpage.domain.security.MyUserDetails;
 import com.cookingpage.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +23,7 @@ public class UserSecurityService implements UserDetailsService{
 			throw new UsernameNotFoundException("Username not found");
 		}
 		
-		return user;
+		return new MyUserDetails(user);
 	}
 
 }

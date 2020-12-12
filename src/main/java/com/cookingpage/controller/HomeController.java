@@ -3,7 +3,6 @@ package com.cookingpage.controller;
 import com.cookingpage.domain.User;
 import com.cookingpage.domain.security.PasswordResetToken;
 import com.cookingpage.domain.security.Role;
-import com.cookingpage.domain.security.UserRole;
 import com.cookingpage.service.UserService;
 import com.cookingpage.service.impl.UserSecurityService;
 import com.cookingpage.utility.MailConstructor;
@@ -41,10 +40,10 @@ public class HomeController {
 	@Autowired
 	private UserSecurityService userSecurityService;
 
-	/*@RequestMapping("/")
+	@RequestMapping("/")
 	public String index() {
 		return "index";
-	}*/
+	}
 
 	@RequestMapping("/login")
 	public String login(Model model) {
@@ -129,11 +128,11 @@ public class HomeController {
 		user.setPassword(encryptedPassword);
 		
 		Role role = new Role();
-		role.setRoleId(1);
+		//role.setRoleId(1);
 		role.setName("ROLE_USER");
-		Set<UserRole> userRoles = new HashSet<>();
-		userRoles.add(new UserRole(user, role));
-		userService.createUser(user, userRoles);
+		//Set<UserRole> userRoles = new HashSet<>();
+		//userRoles.add(new UserRole(user, role));
+		//userService.createUser(user, userRoles);
 		
 		String token = UUID.randomUUID().toString();
 		userService.createPasswordResetTokenForUser(user, token);

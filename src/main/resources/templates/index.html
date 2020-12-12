@@ -1,20 +1,16 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:security="http://www.springframework.org/security/tags" xmlns:sec="">
 <head th:replace="common/header :: common-header" />
 
 <body>
     <header th:replace = "common/header :: navbar" />
     <main>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Description</th>
-            </tr>
-            <tr th:each= "recipe : ${recipes}">
-                <td th:text="${recipe.id}">123</td>
-                <td th:text="${recipe.description}">Tasty Goodnees</td>
-            </tr>
-        </table>
+        <h1>MY INDEX PAGE</h1>
+
+        <a class="menu-items" th:href="@{/adminPortal}">admin portal</a>
+        <a class="menu-items" th:href="@{/userPortal}">user portal</a>
+
     </main>
     <footer th:replace="common/header :: footer"/>
 
