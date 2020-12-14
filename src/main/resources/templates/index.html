@@ -7,17 +7,6 @@
     <main>
         <h1>MY INDEX PAGE</h1>
 
-        <a class="menu-items" th:href="@{/adminPortal}">admin portal</a>
-        <a class="menu-items" th:href="@{/userPortal}">user portal</a>
-
-        <div sec:authorize="hasRole('ROLE_ADMIN')">
-            <a th:href="@{/adminPortal}">Delete</a>
-        </div>
-
-        <div sec:authorize="isAuthenticated()">
-            Welcome <b><span sec:authentication="name">Username</span></b>
-            <i><span sec:authentication="principal.authorities">Roles</span></i>
-        </div>
 
     </main>
     <footer th:replace="common/header :: footer"/>

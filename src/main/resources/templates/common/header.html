@@ -73,6 +73,12 @@
             <li class="menu-items" sec:authorize="isAuthenticated()">
                 <a class="menu-items"  th:href="@{/logout}">Logout</a>
             </li>
+            <li class="menu-items" sec:authorize="hasRole('ROLE_ADMIN')">
+                <a th:href="@{/adminPortal}">AdminPortal</a>
+            </li>
+            <li class="menu-items" sec:authorize="hasRole('ROLE_USER')">
+                <a th:href="@{/userPortal}">UserPortal</a>
+            </li>
         </ul>
     </div>
 </header>
