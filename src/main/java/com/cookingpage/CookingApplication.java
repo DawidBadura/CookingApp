@@ -49,6 +49,8 @@ public class CookingApplication implements CommandLineRunner {
 
 		user1.addRole(role1);
 		user2.addRole(role2);
+		MyUserDetails userDetails = new MyUserDetails(user1);
+		MyUserDetails userDetails2 = new MyUserDetails(user2);
 
 		userService.createUser(user1/*, userRoles*/);
 		userService.createUser(user2/*, userRoles*/);

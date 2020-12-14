@@ -1,6 +1,8 @@
 <!doctype html>
 
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"><head th:replace="common/header :: common-header" />
+
 <head th:fragment="common-header">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,9 +53,7 @@
                 <a class="menu-items" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
 
-            <li class="menu-items">
-                <a class="menu-items" href="/login">MyAccount</a>
-            </li>
+
 
             <li class="menu-items">
                 <a class="menu-items" href="#" id="">Receipes</a>
@@ -67,7 +67,12 @@
                     </li>
                 </ol>
             </li>
-
+            <li class="menu-items" sec:authorize="!isAuthenticated()">
+                <a class="menu-items" href="/login">MyAccount</a>
+            </li>
+            <li class="menu-items" sec:authorize="isAuthenticated()">
+                <a class="menu-items"  th:href="@{/logout}">Logout</a>
+            </li>
         </ul>
     </div>
 </header>

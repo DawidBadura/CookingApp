@@ -80,7 +80,7 @@ public UserDetailsService userDetailsService() {
 				loginPage("/login").permitAll().
 				and().
 				logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).
-				logoutSuccessUrl("/index").deleteCookies("remember-me").permitAll().
+				logoutSuccessUrl("/").deleteCookies("remember-me").permitAll().
 				and().
 				rememberMe().
 				and().headers().frameOptions().disable();
