@@ -62,6 +62,9 @@ public UserDetailsService userDetailsService() {
 			"/",
 			"/newUser",
 			"/newUserr",
+			"/recipe/**",
+			"/ingredient/**",
+
 			"/forgetPassword",
 			"/login",
 			"/fonts/**"};

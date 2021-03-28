@@ -1,9 +1,13 @@
 package com.cookingpage.controller;
 
+import com.cookingpage.commands.IngredientCommand;
 import com.cookingpage.commands.RecipeCommand;
+import com.cookingpage.commands.UnitOfMeasureCommand;
 import com.cookingpage.domain.Recipe;
 import com.cookingpage.service.RecipeService;
+import com.cookingpage.service.UnitOfMeasureService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +21,12 @@ import java.util.Set;
 @Slf4j
 @Controller
 public class RecipeController {
+    @Autowired
+    private RecipeService recipeService;
+    @Autowired
+    private UnitOfMeasureService unitOfMeasureService;
 
-    private final RecipeService recipeService;
 
-    public RecipeController(RecipeService recipeService) {
-        this.recipeService = recipeService;
-    }
 
     @GetMapping("/recipe/{id}/info")
     public String showById(@PathVariable String id, Model model){
@@ -40,8 +44,16 @@ public class RecipeController {
 
 
     @GetMapping("recipe/new")
+
     public String newRecipe(Model model){
-        model.addAttribute("recipe", new RecipeCommand());
+
+        IngredientCommand ingredientCommand = new IngredientCommand();
+        model.addAttribute("ingredient", ingredientCommand);
+
+        ingredientCommand.setUom(new UnitOfMeasureCommand());
+
+        model.addAttribute("uomList",  unitOfMeasureService.listAllUoms());
+        //model.addAttribute("recipe", new RecipeCommand());
 
         //return "recipe/recipeform";
         return "addRecipe";

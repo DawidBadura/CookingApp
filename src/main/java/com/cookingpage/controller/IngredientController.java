@@ -6,6 +6,7 @@ import com.cookingpage.commands.UnitOfMeasureCommand;
 import com.cookingpage.service.IngredientService;
 import com.cookingpage.service.RecipeService;
 import com.cookingpage.service.UnitOfMeasureService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -17,17 +18,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 @Controller
 public class IngredientController {
+    @Autowired
+    private IngredientService ingredientService;
+    @Autowired
+    private RecipeService recipeService;
+    @Autowired
+    private UnitOfMeasureService unitOfMeasureService;
 
-    private final IngredientService ingredientService;
-    private final RecipeService recipeService;
-    private final UnitOfMeasureService unitOfMeasureService;
 
-    public IngredientController(IngredientService ingredientService, RecipeService recipeService, UnitOfMeasureService unitOfMeasureService) {
-        this.ingredientService = ingredientService;
-        this.recipeService = recipeService;
-        this.unitOfMeasureService = unitOfMeasureService;
+    @GetMapping("ingredient/new")
+    public String newIngredient(Model model){
+
+        IngredientCommand ingredientCommand = new IngredientCommand();
+        model.addAttribute("ingredient", ingredientCommand);
+
+        ingredientCommand.setUom(new UnitOfMeasureCommand());
+
+        model.addAttribute("uomList",  unitOfMeasureService.listAllUoms());
+
+        return "addIngredient";
     }
-
     @GetMapping("/recipe/{recipeId}/ingredients")
     public String listIngredients(@PathVariable String recipeId, Model model){
         log.debug("Getting ingredient list for recipe id: " + recipeId);
