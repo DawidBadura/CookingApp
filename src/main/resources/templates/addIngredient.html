@@ -7,83 +7,12 @@
 
 <main id="main">
 
-<H1>ADD DISH</H1>
-
-<!--    <div class="login-menuu">
-        <div class="back-picture"></div>
-        <div class="my-container">
-            <h2>Login</h2>
-            <div class="logalert" th:if="${param.error != null}">Incorrect username or password.</div>
-            <form th:action="@{/login}" method="post">
-                <div class="form-group">
-                    <label for="username">* Username: </label>
-                    <input required="required" type="text" class="form-control" id="username" name="username" />
-                    <p>Enter your username here.</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">* Password: </label>
-                    <input required="required" type="password" class="form-control" id="password" name="password" />
-                    <p>Enter the password that accompanies your username</p>
-                </div>
-
-                <button type="submit" class="button">Log in</button>
-                <a id="link-button" class="button" href="/newUser">Create new account</a>
-
-            </form>
-        </div>
-    </div>
-    </div>-->
-<!--    <div class="login-menuu">
-        <div class="back-picture"></div>
-        <div class="my-container">
-            <h2>New Dish</h2>
-            <form th:action="@{/dish/add}" th:object="${dish}" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" th:field="*{name}" id="name" placeholder="Name"/>
-                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-                    <p>Enter name of dish.</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" th:field="*{description}" id="description" placeholder="Description"/>
-                    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
-                    <p>Short describe of your dish</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="ingredients">Ingredients</label>
-                    <input type="text" th:field="*{ingredients}" id="ingredients" placeholder="Ingredients"/>
-                    <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
-                    <p>What we need to start making food</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="receipe">Receipe</label>
-                    <input type="text" th:field="*{receipe}" id="receipe" placeholder="Receipe"/>
-                    <span th:if="${#fields.hasErrors('receipe')}" th:errors="*{receipe}"></span>
-                    <p>Share recepe</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="dishImage">Upload dish image</label>
-                    <input id="dishImage" type="file" name="dishImage" th:value="${dish.dishImage}"/>
-                    <p>Share dish picture</p>
-                </div>
-
-                <button type="submit" class="button">Log in</button>
-            </form>
-        </div>
-    </div>-->
-
-
+<H1>ADD INGREDIENT</H1>
 
     <div class="my-container">
             <h2>New Ingredient</h2>
             <div class="logalert" th:if="${param.error != null}">Incorrect input.</div>
-            <form th:action="@{/dish/add}" th:object="${ingredient}" method="post">
+            <form th:action="@{/ingredient/add}" th:object="${ingredient}" method="post">
 
                 <div class="form-group">
                     <label>Description:</label>

@@ -77,6 +77,57 @@
             </form>
         </div>
     </div>-->
+        <div class="my-container">
+                <h2>New Receipe</h2>
+                <div class="logalert" th:if="${param.error != null}">Incorrect input.</div>
+                <form th:action="@{/dish/add}" th:object="${recipe}" method="post">
+
+                        <div class="form-group">
+                                <label>Description:</label>
+                                <input type="text" class="form-control" th:field="*{description}"/>
+                        </div>
+
+                        <div class="form-group">
+                                <label>preparation time:</label>
+                                <input type="number" class="form-control" th:field="*{prepTime}"/>
+                        </div>
+
+                        <div class="form-group">
+                                <label>Cooking time:</label>
+                                <input type="number" class="form-control" th:field="*{cookTime}"/>
+                        </div>
+
+                        <div class="form-group">
+                                <label>Difficulty:</label>
+
+                                <select name="difficulty">
+                                <option th:each="difficulty : ${T(com.cookingpage.domain.Difficulty).values()}"
+                                        th:value="${difficulty}" th:text="${difficulty}"
+                                ></option>
+                                </select>
+                        </div>
+
+
+                        <!-- <div class="form-group">
+                                 <label>Amount </label>
+                                 <input type="number" class="form-control" th:field="*{amount}"/>
+                         </div>
+
+
+                         <div class="form-group">
+                                 <label>UOM:</label>
+                                 <select class="form-control" name="uom.id">
+                                         <option th:each="uomEach : ${uomList}"
+                                                 th:value="${uomEach.id}"
+                                                 th:selected="${uomEach.id.equals(ingredient.uom.id)}"
+                                                 th:text="${uomEach.description}">Each</option>
+                                 </select>
+                         </div>-->
+
+
+                        <button type="submit" class="button">ADD</button>
+                </form>
+        </div>
 
 
 

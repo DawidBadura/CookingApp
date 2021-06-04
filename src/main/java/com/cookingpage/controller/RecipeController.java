@@ -3,7 +3,9 @@ package com.cookingpage.controller;
 import com.cookingpage.commands.IngredientCommand;
 import com.cookingpage.commands.RecipeCommand;
 import com.cookingpage.commands.UnitOfMeasureCommand;
+import com.cookingpage.domain.Difficulty;
 import com.cookingpage.domain.Recipe;
+import com.cookingpage.service.IngredientService;
 import com.cookingpage.service.RecipeService;
 import com.cookingpage.service.UnitOfMeasureService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +27,8 @@ public class RecipeController {
     private RecipeService recipeService;
     @Autowired
     private UnitOfMeasureService unitOfMeasureService;
+    @Autowired
+    private IngredientService ingredientService;
 
 
 
@@ -47,13 +51,10 @@ public class RecipeController {
 
     public String newRecipe(Model model){
 
-        IngredientCommand ingredientCommand = new IngredientCommand();
-        model.addAttribute("ingredient", ingredientCommand);
+        RecipeCommand recipeCommand = new RecipeCommand();
+        model.addAttribute("recipe", recipeCommand);
+        model.addAttribute("listOfIngredients", ingredientService.findAll());
 
-        ingredientCommand.setUom(new UnitOfMeasureCommand());
-
-        model.addAttribute("uomList",  unitOfMeasureService.listAllUoms());
-        //model.addAttribute("recipe", new RecipeCommand());
 
         //return "recipe/recipeform";
         return "addRecipe";

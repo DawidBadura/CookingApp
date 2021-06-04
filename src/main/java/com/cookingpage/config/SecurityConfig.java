@@ -79,7 +79,8 @@ public UserDetailsService userDetailsService() {
 				anyRequest().authenticated().
 				and().
 				csrf().disable().//cors().disable().
-				formLogin().failureUrl("/index").
+				formLogin().failureUrl("/login").
+				defaultSuccessUrl("/", true).
 				loginPage("/login").permitAll().
 				and().
 				logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).
