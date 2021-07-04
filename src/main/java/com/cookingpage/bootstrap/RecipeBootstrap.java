@@ -12,12 +12,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/*
 
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private final CategoryRepository categoryRepository;
     private final RecipeRepository recipeRepository;
+
     private final UnitOfMeasureRepository unitOfMeasureRepository;
 
     public RecipeBootstrap(CategoryRepository categoryRepository, RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
@@ -200,4 +202,4 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         recipes.add(tacosRecipe);
         return recipes;
     }
-}
+}*/

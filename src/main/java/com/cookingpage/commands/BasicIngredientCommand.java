@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @NoArgsConstructor
-public class IngredientCommand {
+public class BasicIngredientCommand {
     private Long id;
     private Long recipeId;
     private String description;
@@ -17,6 +17,4 @@ public class IngredientCommand {
     private Long carbohydrates;
     private Long fats;
     private Long calories;
-    private BigDecimal amount;
-    private UnitOfMeasureCommand uom;
 }

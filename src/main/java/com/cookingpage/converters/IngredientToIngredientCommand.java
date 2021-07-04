@@ -31,6 +31,10 @@ public class IngredientToIngredientCommand implements Converter<Ingredient, Ingr
         ingredientCommand.setAmount(ingredient.getAmount());
         ingredientCommand.setDescription(ingredient.getDescription());
         ingredientCommand.setUom(uomConverter.convert(ingredient.getUom()));
+        ingredientCommand.setCalories(ingredient.getCalories());
+        ingredientCommand.setProteins(ingredient.getProteins());
+        ingredientCommand.setCarbohydrates(ingredient.getCarbohydrates());
+        ingredientCommand.setFats(ingredient.getFats());
         return ingredientCommand;
     }
 }

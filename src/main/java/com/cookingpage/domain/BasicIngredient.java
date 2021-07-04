@@ -13,27 +13,22 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Ingredient {
+public class BasicIngredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    private BigDecimal amount=new BigDecimal(100L);
     private Long proteins;
     private Long carbohydrates;
     private Long fats;
     private Long calories;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure uom;
-
-    @ManyToOne
-    private Recipe recipe;
-
-    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+    public BasicIngredient(String description, Long proteins, Long carbohydrates, Long fats, Long calories) {
         this.description = description;
-        this.uom = uom;
-        this.recipe = recipe;
+        this.proteins = proteins;
+        this.carbohydrates = carbohydrates;
+        this.fats = fats;
+        this.calories = calories;
     }
 }

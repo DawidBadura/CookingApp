@@ -5,6 +5,7 @@ import com.cookingpage.commands.RecipeCommand;
 import com.cookingpage.service.ImageService;
 import com.cookingpage.service.RecipeService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +22,10 @@ import java.io.InputStream;
 @Controller
 public class ImageController {
 
-    private final ImageService imageService;
-    private final RecipeService recipeService;
-
-    public ImageController(ImageService imageService, RecipeService recipeService) {
-        this.imageService = imageService;
-        this.recipeService = recipeService;
-    }
+    @Autowired
+    private ImageService imageService;
+    @Autowired
+    private RecipeService recipeService;
 
     @GetMapping("recipe/{id}/image")
     public String showUploadForm(@PathVariable String id, Model model){

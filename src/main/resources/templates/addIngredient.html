@@ -12,20 +12,34 @@
     <div class="my-container">
             <h2>New Ingredient</h2>
             <div class="logalert" th:if="${param.error != null}">Incorrect input.</div>
-            <form th:action="@{/ingredient/add}" th:object="${ingredient}" method="post">
+            <form th:action="@{/ingredient/new}" th:object="${ingredient}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+
 
                 <div class="form-group">
-                    <label>Description:</label>
+                    <label>Name:</label>
                     <input type="text" class="form-control" th:field="*{description}"/>
                 </div>
 
                 <div class="form-group">
-                    <label>Amount </label>
-                    <input type="number" class="form-control" th:field="*{amount}"/>
+                    <label>Calories </label>
+                    <input type="number" class="form-control" th:field="*{calories}"/>
+                </div>
+                <div class="form-group">
+                    <label>Proteins </label>
+                    <input type="number" class="form-control" th:field="*{proteins}"/>
+                </div>
+                <div class="form-group">
+                    <label>Carbohydrates </label>
+                    <input type="number" class="form-control" th:field="*{carbohydrates}"/>
+                </div>
+                <div class="form-group">
+                    <label>Fats </label>
+                    <input type="number" class="form-control" th:field="*{fats}"/>
                 </div>
 
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label>UOM:</label>
                     <select class="form-control" name="uom.id">
                         <option th:each="uomEach : ${uomList}"
@@ -33,7 +47,7 @@
                                 th:selected="${uomEach.id.equals(ingredient.uom.id)}"
                                 th:text="${uomEach.description}">Each</option>
                     </select>
-                </div>
+                </div>-->
 
 
                 <button type="submit" class="button">ADD</button>
